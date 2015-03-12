@@ -1,19 +1,24 @@
 Template.messageNew.events({
-  "submit .new-message": function(event, template) {
-    var body = template.find(".new-body").value,
-    barfId = this.barf._id;
+  "keypress .new-message": function(event, template) {
+    if (event.which === 13) {
+      var body = template.find(".new-body").value,
+      barfId = this.barf._id;
 
-    event.preventDefault();
+      event.preventDefault();
 
-    var newMessage = _.extend({
-      body: body,
-      barfId: barfId,
-      userId: Meteor.userId()
-    });
+      var newMessage = _.extend({
+        body: body,
+        barfId: barfId,
+        userId: Meteor.userId()
+      });
 
-    Messages.insert(newMessage);
+      Messages.insert(newMessage);
 
-    event.target.reset();
-    event.target.focus();
+      template.find(".new-body").value = "";
+
+      Tracker.afterFlush(function(){
+        $('.barf-messages').scrollTop($('.barf-messages')[0].scrollHeight);
+      });
+    }
   }
 });

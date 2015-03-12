@@ -1,12 +1,18 @@
 <template name="barfShow">
+<div class="barf-show">
   <div class="barf-title">
     {{ barf.title }}
     <span class="user-email">{{currentUserEmail}}</span>
   </div>
 
+  <div class="barf-messages">
     {{#each barfMessages}}
       {{> messagePartial }}
     {{/each}}
+  </div>
 
+  <div class="barf-input">
   {{> messageNew }}
+  </div>
+</div>
 </template>
