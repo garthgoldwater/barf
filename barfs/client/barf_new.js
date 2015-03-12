@@ -5,10 +5,11 @@ Template.barfNew.events({
     event.preventDefault();
 
     var newBarf = _.extend({
-      title: title
+      title: title,
+      userId: Meteor.userId()
     });
-
-    Barfs.insert(newBarf);
+    console.log(Meteor.userId())
+    barf = Barfs.insert(newBarf);
 
     event.target.reset();
   }

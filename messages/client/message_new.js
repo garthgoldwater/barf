@@ -1,17 +1,19 @@
 Template.messageNew.events({
   "submit .new-message": function(event, template) {
-    var title = template.find(".new-body").value,
-        barfId = this._selectorId;
+    var body = template.find(".new-body").value,
+    barfId = this.barf._id;
 
     event.preventDefault();
 
     var newMessage = _.extend({
-      title: title,
-      barfId: barfId
+      body: body,
+      barfId: barfId,
+      userId: Meteor.userId()
     });
 
     Messages.insert(newMessage);
 
     event.target.reset();
+    event.target.focus();
   }
 });

@@ -1,6 +1,9 @@
 <template name="barfPartial">
   <li class="barf-summary">
-  <a href="{{ pathFor 'barfShow' _id }}">{{ title }}</a>
+  <a href="{{ pathFor 'barfShow' _id }}">
+    {{ title }}
+  </a>
+  <span> by: {{barfUserEmail}}</span>
     <ul class="message-partial">
       {{#each messages }}
         {{> messagePartial }}

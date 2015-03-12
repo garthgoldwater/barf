@@ -1,5 +1,12 @@
 <template name="messagePartial">
   <li class="message-partial">
-    <div class="message-body">{{ body }}</div>
+    <div class="message">
+      <span class="message-email">
+        {{messageUserEmail}}:
+    </span>
+    <span class="message-body">
+      {{ body }}
+    </span>
+  </div>
   </li>
 </template>
