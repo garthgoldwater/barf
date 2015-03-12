@@ -1,0 +1,13 @@
+<template name="layout">
+  <nav>
+    {{#if currentUser}}
+      <span class="nav-text">{{ currentUserEmail }}</span>
+      <span class="nav-text">{{> logout }}</span>
+    {{else}}
+      {{> loginButtons }}
+    {{/if}}
+  </nav>
+
+  {{> yield }}
+
+</template>

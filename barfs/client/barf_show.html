@@ -1,0 +1,11 @@
+<template name="barfShow">
+  <div class="barf-title">
+    {{ barf.title }}
+  </div>
+
+    {{#each barfMessages}}
+      {{> messagePartial }}
+    {{/each}}
+
+  {{> messageNew }}
+</template>
