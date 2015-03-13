@@ -4,13 +4,12 @@
 * extend user-accounts with usernames
 * github and facebook integration
 * barfs to respond to barfs
-* styling
 * respond to barfs with inline barfs
 * create barfs from selection of messages
 * create barfs from selection of barfs and messages
 * real chat functionality
   * usernames
-  * focus cursor back in input field on chat submit
+  * ~~focus cursor back in input field on chat submit~~
 * threaded messages?
 * ordering barfs and messages
 * agendas/barf-sculptures
@@ -30,7 +29,12 @@
   * docker
 * fast login -- name unique only to the barfspace
 * user accounts on top of fast login
+  * username unique to barfspace only
+  * only room password required
+  * password replaceable by secure link
+  * cookies/sticky sessions
 * email related features
+  * access all features through email
 
 # extras
 
