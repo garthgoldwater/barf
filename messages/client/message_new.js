@@ -10,12 +10,15 @@ Template.messageNew.events({
       var messageAddress = Messages.find({barfId: barfId}).count();
       // this will not work for updating previous messages I think, and we
       // still have to handle re-ordering messages after the fact
+      var actionAddress = Actions.find({barfId: barfId}).count();
+
       var newAction = _.extend({
         type: "create",
         noun: "message",
         time: new Date(),
         barfId: barfId,
         nounId: null,
+        actionAddress: actionAddress
         });
 
       actionId = Actions.insert(newAction);
